@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+        
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Título</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Data Limite</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in tarefas %}
+    <tr>
+            <td>{{ i.id }}</td>
+            <td>{{ i.titulo }}</td>
+            <td>{{ i.descricao }}</td>
+            <td>{{ i.data_limite }}</td>
+        
+    </tr>
+    {% endfor %}    
+  </tbody>
+</table>
+
+{% endblock %}
+    
