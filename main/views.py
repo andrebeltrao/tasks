@@ -19,4 +19,14 @@ def tasks_ok(request):
         'tarefas':tarefas
     }
     
-    return render(request,'tasks/tasks_ok.html')
+    return render(request,'tasks/tasks_ok.html', context)
+
+
+def tasks_nok(request):
+    
+    tarefas = Task.objects.filter(concluida=0)
+    context = {
+        'tarefas':tarefas
+    }
+    
+    return render(request, 'tasks/task_list.html', context)
