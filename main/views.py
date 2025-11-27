@@ -30,3 +30,22 @@ def tasks_nok(request):
     }
     
     return render(request, 'tasks/task_list.html', context)
+
+
+def task_create(request):
+    
+    if request.method == 'POST':
+        titulo = request.POST.get('titulo', "").strip()
+        descricao = request.POST.get('descricao', "").strip()
+        concluida = request.POST.get('concluida', "").strip()
+        prioridade = request.POST.get('prioridade', "").strip()
+        data_limite = request.POST.get('data_limite', "").strip()
+        
+        print('valor recebido do front:', titulo)
+        
+    context = {
+        'opcoes_prioridade': Task.Priority.choices,
+    }
+        
+    return render (request, 'tasks/task_form.html', context)
+    

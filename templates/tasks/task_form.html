@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<form method='POST' action=''>
+    {% csrf_token %}
+
+    <p>
+        <label for='id_titulo'>Título:</label> <br>
+        <input type="text"
+        id='id_titulo'
+        name='titulo'
+        required
+        maxlength="200"
+        value="{% if task %}{{ task.titulo }}{% endif %}"
+        >
+    </p>
+
+    <p>
+        <label for="id_descricao">Descrição:</label> <br>
+        <textarea
+        <input type="text"
+        id="id_descricao"
+        name="descricao"
+        rows="6"> {% if task %}{{ task.descricao }}{% endif %} 
+        </textarea>
+        
+    </p>
+
+    <button type="submit">Salvar</button>
+
+
+
+
+
+
+
+{% endblock %}
