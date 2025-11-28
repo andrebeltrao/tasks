@@ -3,9 +3,9 @@ from django.conf import settings
 
 class Task(models.Model):
     class Priority(models.TextChoices):
-        BAIXA = "B", "Baixa"
+        BAIXA = "B", "BAIXA"
         MEDIA = "M", "MEDIA"
-        ALTA = "A", "ALTA"
+        ALTA = "A", "ALTA"  #value, label
 
     usuario = models.ForeignKey(
         settings.AUTH_USER_MODEL,
